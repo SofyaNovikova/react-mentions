@@ -38,7 +38,7 @@ export const _getTriggerRegex = function(trigger, options = {}) {
     return new RegExp(
       `(?:^|\\s)(${escapedTriggerChar}([^${
         allowSpaceInQuery ? '' : '\\s'
-      }${escapedTriggerChar}]*))$`
+      }]*))$`
     )
   }
 }
@@ -690,6 +690,7 @@ class MentionsInput extends React.Component {
     suggestion,
     { mentionDescriptor, querySequenceStart, querySequenceEnd, plainTextValue }
   ) => {
+    console.log('add mention');
     // Insert mention in the marked up value at the correct position
     const value = this.props.value || ''
     const { markup, displayTransform } = this.props
